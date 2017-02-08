@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Solution217 {
     public static void main(String [] args) {
-        int [] nums = {3, 1, 4, 4};
+        int [] nums = {3, 1};
         boolean flag = containsDuplicate(nums);
         System.out.print(flag);
     }
@@ -17,8 +17,9 @@ public class Solution217 {
             return false;
         }
         Set<Object> set = new HashSet<Object>();
-        List list = Arrays.asList(nums);
-        set.addAll(list);
+        for (int i : nums) {
+            set.add(i);
+        }
         if(nums.length == set.size()) {
             return false;
         } else {
